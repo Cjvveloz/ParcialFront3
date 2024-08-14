@@ -1,6 +1,7 @@
 
 import './App.css'
 import Card from './Componets/Card'
+import Form from './Componets/Form'
 
 function App() {
   
@@ -8,9 +9,9 @@ function App() {
   return (
     <>
       <div className='App'>
-        <h1>Carga de estudiantes</h1>
-        <form></form>
-        <Card/>
+        
+        <Form/>
+        
       </div>
     </>
   )

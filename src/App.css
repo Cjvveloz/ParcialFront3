@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  background-color: #f0f0f0; /* Cambia este valor por el color que desees */
+  color: #333; /* Esto define el color del texto en la página */
+}
