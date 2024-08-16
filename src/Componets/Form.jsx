@@ -12,9 +12,7 @@ const Form = () => {
     console.log(animal);
 
    
-    const [show, setShow] = useState(false);
-
-   
+    const [show, setShow] = useState(false); 
     const [error, setError] = useState("");
 
    
@@ -37,16 +35,18 @@ const Form = () => {
 
         const name = animal.name.trim(); 
         const type = animal.type.trim();
+        const genero = animal.genero.trim();
 
        
         const nameValido = name.length >= 3; 
         const typeValido = type.length >= 6; 
+        const typeGenero = genero.length >= 6; 
 
       
         const nameSinEspacios = animal.name === name;
 
        
-        if (nameValido && nameSinEspacios && typeValido) {
+        if (nameValido && nameSinEspacios && typeValido && typeGenero) {
             setShow(true); 
             setError("");  
         } else {
@@ -59,7 +59,8 @@ const Form = () => {
     const reset = () => {
         setAnimal({
             name: "",
-            type: ""
+            type: "",
+            genero: "",
         });
         setShow(false); 
         setError(""); 
@@ -67,10 +68,9 @@ const Form = () => {
 
     return (
         <>
-            {show ? ( 
-                <Card animal={animal} />
-            ) : (
-                <>
+            
+            
+                
                     <h1>Formulario Tipo de Animales Parcial</h1>
                     <form onSubmit={handleSubmit}>
                         <label>Nombre:</label>
@@ -94,11 +94,12 @@ const Form = () => {
                         <button type="submit">Enviar</button>
                     </form>
                     <button onClick={reset}>Reset Form</button>
-                </>
-            )}
-            {error && (
+                
+            
+            {error && 
                 <h4 style={{ color: "red" }}>{error}</h4> 
-            )}
+            }
+            {show && <Card animal={animal} />}
         </>
     );
 };

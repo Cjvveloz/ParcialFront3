@@ -6,7 +6,7 @@ const Card = ({ animal}) => {
       <h2>Información del Animal</h2>
       <p>Nombre: {animal.name}</p>
       <p>Tipo: {animal.type}</p>
-      <p>Tipo: {animal.genero}</p>
+      <p>Genero: {animal.genero}</p>
    </div>
   )
 }
